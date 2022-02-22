@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>ReLU関数の導関数 - 活性化関数の導関数 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ReLU関数の導関数をPerlで書いてみます。">
+<title> Derivative of ReLU function --Derivative of activation function  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's write the  derivative of the  ReLU function in Perl.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20201001161518.html">ReLU関数の導関数 - 活性化関数の導関数</a></h2>
+    <h2><a href="/blog/20201001161518.html"> Derivative of ReLU function --Derivative of activation function </a></h2>
 <p>
-  <a href="/blog/20200911102242.html">ReLU関数</a>の<a href="/blog/20200919123308.html">導関数</a>をPerlで書いてみます。
+  Let's write the <a href="/blog/20200919123308.html"> derivative</a> of the <a href="/blog/20200911102242.html"> ReLU function</a> in Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,29 +74,182 @@
 
 
 <p>
-  ReLU関数の導関数をPerlで書いてみます。ReLU関数の導関数は、逆誤伝播法に利用します。
+  Let's write the derivative of the ReLU function in Perl. The derivative of the ReLU function is used for the reverse mispropagation method.
 </p>
 <pre>
 use strict;
 use warnings;
 
 sub relu_derivative {
-  my ($x) = @_;
+   my ($x) = @_;
   
-  my $relu_derivative = 1 * ($x &gt; 0.0);
+   my $relu_derivative = 1 * ($x&gt; 0.0);
   
-  return $relu_derivative;
+   return $relu_derivative;
 }
 
 my $value1 = 0.7;
-my $relu_derivative1 = relu_derivative($value1);
+my $relu_derivative1 = relu_derivative ($value1);
 
 print "$relu_derivative1\n";
 
 my $value2 = -0.4;
-my $relu_derivative2 = relu_derivative($value2);
+my $relu_derivative2 = relu_derivative ($value2);
 
 print "$relu_derivative2\n";
+</pre>th, $columns_length) = @_;
+  
+  my $values_length = $rows_length * $columns_length;
+  my $mat = {
+    rows_length => $rows_length,
+    columns_length => $columns_length,
+    values ​​=> [(0) x $values_length],
+  };;
+  
+  return $mat;
+<p>
+  }
+</p>
+<p>
+  # Find the product of matrices
+</p>
+<p>
+  sub mat_mul {
+</p>
+  my ($mat1, $mat2) = @_;
+  
+  my $mat1_rows_length = $mat1->{rows_length};
+  my $mat1_columns_length = $mat1->{columns_length};
+  my $mat1_values ​​= $mat1->{values};
+  
+  my $mat2_rows_length = $mat2->{rows_length};
+  my $mat2_columns_length = $mat2->{columns_length};
+  my $mat2_values ​​= $mat2->{values};
+  
+  #Calculation of matrix product
+  my $mat_out_values ​​= [];
+  for (my $row = 0; $row <$mat1_rows_length; $row ++) {
+    for (my $col = 0; $col <$mat2_columns_length; $col ++) {
+      for (my $incol = 0; $incol <$mat1_columns_length; $incol ++) {
+        $mat_out_values->[$row + $col * $mat1_rows_length]
+         + = $mat1_values->[$row + $incol * $mat1_rows_length] * $mat2_values->[$incol + $col * $mat2_rows_length];
+      }
+    }
+  }
+  
+  my $mat_out = {
+    rows_length => $mat1_rows_length,
+    columns_length => $mat2_columns_length,
+    values ​​=> $mat_out_values,
+  };;
+  
+  return $mat_out;
+<p>
+  }
+</p>
+<p>
+  #Creating a column-first matrix
+</p>
+<p>
+  sub mat_new {
+</p>
+  my ($values, $rows_length, $columns_length) = @_;
+  
+  my $mat = {
+    rows_length => $rows_length,
+    columns_length => $columns_length,
+    values ​​=> $values,
+  };;
+  
+  return $mat;
+<p>
+  }
+</p>
+<p>
+  # Transpose matrix (replace matrix)
+</p>
+<p>
+  sub mat_transpose {
+</p>
+  my ($mat) = @_;
+  
+  my $rows_length = $mat->{rows_length};
+  my $columns_length = $mat->{columns_length};
+  my $length = $rows_length * $columns_length;
+  
+  my $mat_trans = {};
+  $mat_trans->{rows_length} = $columns_length;
+  $mat_trans->{columns_length} = $rows_length;
+  
+  my $values ​​= $mat->{values};
+  my $mat_trans_values ​​= [];
+  
+  for (my $row_index = 0; $row_index <$rows_length; $row_index ++) {
+    for (my $column_index = 0; $column_index <$columns_length; $column_index ++) {
+      $mat_trans_values->[$row_index * $columns_length + $column_index] = $values->[$column_index * $rows_length + $row_index];
+    }
+  }
+  $mat_trans->{values} = $mat_trans_values;
+  
+  return $mat_trans;
+<p>
+  }
+</p>
+<p>
+  sub array_div_scalar {
+</p>
+  my ($nums, $scalar_num) = @_;
+  
+  my $nums_out = [];
+  for (my $i = 0; $i <@$nums; $i ++) {
+    $nums_out->[$i] = $nums->[$i] / $scalar_num;
+  }
+  
+  return $nums_out;
+<p>
+  }
+</p>
+<p>
+  #softmax function
+</p>
+<p>
+  sub softmax {
+</p>
+  my ($nums) = @_;
+  
+  my $exp_total = 0;
+  for (my $i = 0; $i <@$nums; $i ++) {
+    $exp_total + = exp($nums->[$i]);
+  }
+  
+  my $nums_out = [];
+  for (my $i = 0; $i <@$nums; $i ++) {
+    $nums_out->[$i] = exp($nums->[$i]) / $exp_total;
+  }
+  
+  return $nums_out;
+<p>
+  }
+</p>
+<p>
+  #softmax Derivative of cross entropy error
+</p>
+<p>
+  sub softmax_cross_entropy_cost_derivative {
+</p>
+  my ($softmax_outputs, $desired_outputs) = @_;
+  
+  my $length = @$softmax_outputs;
+  
+  my $softmax_cross_entropy_cost_derivative = [];
+  for (my $i = 0; $i <@$softmax_outputs; $i ++) {
+    $softmax_cross_entropy_cost_derivative->[$i] = ($softmax_outputs->[$i]-$desired_outputs->[$i]) / $length;
+  }
+  
+  return $softmax_cross_entropy_cost_derivative;
+<p>
+  }
+</p>
 </pre>
 
   </div>
@@ -127,8 +277,7 @@ print "$relu_derivative2\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

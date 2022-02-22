@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>ベクトルの内積の計算 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ベクトルの内積の計算方法を解説します。ベクトルの内積は、逆誤伝播法で、中間層のバイアスの傾きを求めるときに使用します。">
+<title> Calculation of vector inner product  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="I will explain how to calculate the inner product of vectors. The vector inner product is used in the reverse mispropagation method to determine the slope of the bias of the middle layer.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200924123308.html">ベクトルの内積の計算</a></h2>
+    <h2><a href="/blog/20200924123308.html"> Calculation of vector inner product </a></h2>
 <p>
-  ベクトルの内積の計算方法を解説します。ベクトルの内積は、逆誤伝播法で、中間層のバイアスの傾きを求めるときに使用します。
+  I will explain how to calculate the inner product of vectors. The vector inner product is used in the reverse mispropagation method to determine the slope of the bias of the middle layer.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,14 +74,14 @@
 
 
 <p>
-  ベクトルの内積とは以下の計算のことをいいます。ベクトルのサイズは同じである必要があります。
+  The vector inner product is the following calculation. The size of the vectors should be the same.
 </p>
 <pre>
-内積 = ベクトル0の要素0 * ベクトル1の要素0 + ベクトル0の要素1 * ベクトル1の要素1 + ... + ベクトル0の要素n * ベクトル1の要素n
+Inner product = element of vector 0 0 * element of vector 1 0 + element of vector 0 1 * element of vector 1 1 + ... + element of vector 0 n * element of vector 1 n
 </pre>
-<h3>ベクトルの内積を求めるPerlプログラム</h3>
+<h3> Perl program to find the inner product of vectors </h3>
 <p>
-  ベクトルの内積を求めるPerlプログラムです。
+  A Perl program that finds the inner product of vectors.
 </p>
 <pre>
 use strict;
@@ -94,8 +91,8 @@ my $vec1 = [1, 2, 3];
 my $vec2 = [4, 5, 6];
 
 my $vec_inmul = 0;
-for (my $i = 0; $i &lt; @$vec1; $i++) {
-  $vec_inmul += $vec1-&gt;[$i] * $vec2-&gt;[$i];
+for (my $i = 0; $i &lt;@$vec1; $i ++) {
+   $vec_inmul + = $vec1-&gt;[$i] * $vec2-&gt;[$i];
 }
 
 # 32
@@ -127,8 +124,7 @@ print "$vec_inmul\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

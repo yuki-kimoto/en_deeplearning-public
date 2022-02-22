@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>ReLU関数 - 活性化関数 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ReLU関数をPerlで書いてみます。ReLU関数は活性化関数の一つです。">
+<title> ReLU function --activation function  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's write the ReLU function in Perl. The ReLU function is one of the  activation functions.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200911102242.html">ReLU関数 - 活性化関数</a></h2>
+    <h2><a href="/blog/20200911102242.html"> ReLU function --activation function </a></h2>
 <p>
-  ReLU関数をPerlで書いてみます。ReLU関数は<a href="/blog/20200902120907.html">活性化関数</a>の一つです。
+  Let's write the ReLU function in Perl. The ReLU function is one of the <a href="/blog/20200902120907.html"> activation functions</a>.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,43 +74,43 @@
 
 
 <p>
-  ReLU関数は、値が0より大きい場合はその値を、0以下の場合は0を返す関数です。
+  The ReLU function is a function that returns a value if it is greater than 0 and 0 if it is less than or equal to 0.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# ReLU関数
+#ReLU function
 sub relu {
   my ($x) = @_;
   
-  my $relu = $x * ($x &gt; 0.0);
+  my $relu = $x * ($x&gt; 0.0);
   
   return $relu;
 }
 
 my $value1 = 0.7;
-my $relu1 = relu($value1);
+my $relu1 = relu ($value1);
 
 print "$relu1\n";
 
 my $value2 = -0.4;
-my $relu2 = relu($value2);
+my $relu2 = relu ($value2);
 
 print "$relu2\n";
 </pre>
 <p>
-  ReLU関数は、ロジックが簡単で、計算量が少なく、効果が高い活性化関数として知られています。
+  The ReLU function is known as an activation function with simple logic, low complexity, and high effectiveness.
 </p>
 <p>
-  ReLU関数は隠れ層における活性化関数として利用されますが、出力層で出力を作成する場合にも利用することができます。
+  The ReLU function is used as an activation function in the hidden layer, but it can also be used to create output in the output layer.
 </p>
-<h3>ReLU関数の導関数</h3>
+<h3> Derivative of ReLU function </h3>
 <p>
-  ReLU関数の導関数については以下を参考にしてください。
+  Please refer to the following for the derivative of the ReLU function.
 </p>
 <ul>
-  <li><a href="/blog/20201001161518.html">ReLU関数の導関数</a></li>
+  <li> <a href="/blog/20201001161518.html"> Derivatives of the ReLU function</a> </li>
 </ul>
 
   </div>
@@ -141,8 +138,7 @@ print "$relu2\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

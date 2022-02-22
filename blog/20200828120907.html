@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>ベクトルの差を求める - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ディープラーニングの計算で必要なベクトルの差をPerlで求めましょう。">
+<title> Find the difference between the vectors  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's use Perl to find the vector difference required for deep learning calculations.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200828120907.html">ベクトルの差を求める</a></h2>
+    <h2><a href="/blog/20200828120907.html"> Find the difference between the vectors </a></h2>
 <p>
-  ディープラーニングの計算で必要なベクトルの差をPerlで求めましょう。
+  Let's use Perl to find the vector difference required for deep learning calculations.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,33 +74,33 @@
 
 
 <p>
-  Perlでは、ベクトルは配列で表現します。ベクトルと聞くと、ソフトウェアエンジニアは頭が痛くなるんじゃないかと思いますが、配列と言ってもらえると「なんだぁ～」ってなりますよね。
+  In Perl, vectors are represented as arrays. I think that software engineers will have a headache when they hear the word "vector", but when they say "array", it means "what?".
 </p>
 <p>
-  ベクトルの差を求めるPerlのプログラムです。
+  A Perl program that finds vector differences.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# ベクトルの差
+#Vector difference
 sub vec_sub {
-  my ($vec1, $vec2) = @_;
+   my ($vec1, $vec2) = @_;
 
-  my $vec_sub = [];
+   my $vec_sub = [];
 
-  for (my $i = 0; $i &lt; @$vec1; $i++) {
-    $vec_sub-&gt;[$i] = $vec1-&gt;[$i] - $vec2-&gt;[$i];
-  }
+   for (my $i = 0; $i &lt;@$vec1; $i ++) {
+     $vec_sub-&gt;[$i] = $vec1-&gt;[$i]-$vec2-&gt;[$i];
+   }
   
-  return $vec_sub;
+   return $vec_sub;
 }
 
 my $vec1 = [1, 2, 3];
 my $vec2 = [4, 5, 6];
 
-# ベクトルの差
-my $vec_sub = vec_sub($vec1, $vec2);
+#Vector difference
+my $vec_sub = vec_sub ($vec1, $vec2);
 
 # -3 -3 -3
 print "@$vec_sub\n";
@@ -134,8 +131,7 @@ print "@$vec_sub\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

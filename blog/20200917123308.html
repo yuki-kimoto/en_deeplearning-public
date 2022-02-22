@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>転置行列を求める - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="転置行列をPerlで求めてみましょう。転置行列とは、行と列が入れ替わった行列のことです。転置行列の計算は、逆誤伝播法で必要になります。">
+<title> Find the transposed matrix  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's find the transposed matrix in Perl. A transposed matrix is ​​a matrix with rows and columns swapped. The calculation of the transposed matrix is ​​required by the inverse mispropagation method.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200917123308.html">転置行列を求める</a></h2>
+    <h2><a href="/blog/20200917123308.html"> Find the transposed matrix </a></h2>
 <p>
-  転置行列をPerlで求めてみましょう。転置行列とは、行と列が入れ替わった行列のことです。転置行列の計算は、逆誤伝播法で必要になります。
+  Let's find the transposed matrix in Perl. A transposed matrix is ​​a matrix with rows and columns swapped. The calculation of the transposed matrix is ​​required by the inverse mispropagation method.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,43 +74,43 @@
 
 
 <p>
-  行列は<a href="/blog/20200914103640.html">列優先の行列</a>だと考えてください。
+  Think of the matrix as a <a href="/blog/20200914103640.html"> column-first matrix</a>.
 </p>
 <pre>
-# 数学の行列表現
-# 3行2列の行列
-# 1 4
-# 2 5
+# Matrix representation of mathematics
+# 3 rows and 2 columns matrix
+# 14
+# twenty five
 # 3 6
 
-# 列優先でのデータのもちかた
+#How to use data with column priority
 my $mat = {
-  values =&gt; [1, 2, 3, 4, 5, 6],
+  values ​​=&gt; [1, 2, 3, 4, 5, 6],
   rows_length =&gt; 3,
   columns_length =&gt; 2,
-};
+};;
 </pre>
 <p>
-  この行列を転置するとすると以下のようになります。行と列が入れ替わります。
+  Transposing this matrix gives: The rows and columns are swapped.
 </p>
 <pre>
-# 転置行列
+#Transpose matrix
 
-# 数学の行列表現
-# 2行3列の行列
-# 1 2 3
+# Matrix representation of mathematics
+# 2 rows and 3 columns matrix
+# one two Three
 # 4 5 6
 
-# 列優先でのデータのもちかた
+#How to use data with column priority
 my $mat_transpose = {
-  values =&gt; [1, 4, 2, 5, 3, 6],
+  values ​​=&gt; [1, 4, 2, 5, 3, 6],
   rows_length =&gt; 2,
   columns_length =&gt; 3,
-};
+};;
 </pre>
-<h3>転置行列を求めるPerlプログラム</h3>
+<h3> Perl program for transposed matrix </h3>
 <p>
-  転置行列を求めるPerlプログラムを書いてみます。
+  Let's write a Perl program that finds the transposed matrix.
 </p>
 <pre>
 use strict;
@@ -126,16 +123,16 @@ sub mat_transpose {
   my $columns_length = $mat-&gt;{columns_length};
   my $length = $rows_length * $columns_length;
   
-  my $mat_trans ={};
+  my $mat_trans = {};
   $mat_trans-&gt;{rows_length} = $columns_length;
   $mat_trans-&gt;{columns_length} = $rows_length;
   
-  my $values = $mat-&gt;{values};
-  my $mat_trans_values = [];
+  my $values ​​= $mat-&gt;{values};
+  my $mat_trans_values ​​= [];
   
-  for (my $row_index = 0; $row_index &lt; $rows_length; $row_index++) {
-    for (my $column_index = 0; $column_index &lt; $columns_length; $column_index++) {
-      $mat_trans_values-&gt;[$row_index * $columns_length + $column_index] = $values-&gt;[$column_index * $rows_length+ $row_index];
+  for (my $row_index = 0; $row_index &lt;$rows_length; $row_index ++) {
+    for (my $column_index = 0; $column_index &lt;$columns_length; $column_index ++) {
+      $mat_trans_values-&gt;[$row_index * $columns_length + $column_index] = $values-&gt;[$column_index * $rows_length + $row_index];
     }
   }
   $mat_trans-&gt;{values} = $mat_trans_values;
@@ -144,15 +141,15 @@ sub mat_transpose {
 }
 
 my $mat = {
-  values =&gt; [1, 2, 3, 4, 5, 6],
+  values ​​=&gt; [1, 2, 3, 4, 5, 6],
   rows_length =&gt; 3,
   columns_length =&gt; 2,
-};
+};;
 
-my $mat_trans = mat_transpose($mat);
+my $mat_trans = mat_transpose ($mat);
 
-# Row:2, Column:3, Values:1 4 2 5 3 6
-print "Row:$mat_trans-&gt;{rows_length}, Column:$mat_trans-&gt;{columns_length}, Values:@{$mat_trans-&gt;{values}}\n";
+#Row: 2, Column: 3, Values: 1 4 2 5 3 6
+print "Row: $mat_trans-&gt;{rows_length}, Column: $mat_trans-&gt;{columns_length}, Values: @{$mat_trans-&gt;{values}}\n";
 </pre>
 
   </div>
@@ -180,8 +177,7 @@ print "Row:$mat_trans-&gt;{rows_length}, Column:$mat_trans-&gt;{columns_length},
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

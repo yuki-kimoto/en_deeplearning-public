@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>行列とは - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="行列とは、行と列に並んだデータのことです。">
+<title> What is a matrix?  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="A matrix is ​​data that is lined up in rows and columns.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200928161518.html">行列とは</a></h2>
+    <h2><a href="/blog/20200928161518.html"> What is a matrix? </a></H2>
 <p>
-  行列とは、行と列に並んだデータのことです。
+  A matrix is ​​data that is lined up in rows and columns.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,35 +74,35 @@
 
 
 <pre>
-# 行列
-1 4
-2 5
+# queue
+14
+twenty five
 3 6
 </pre>
 <p>
-  上記は、3行2列の行列です。
+  The above is a 3-by-2 matrix.
 </p>
-<h3>列優先行列と行優先行列</h3>
+<h3> Column priority matrix and row priority matrix </h3>
 <p>
-  プログラムで行列を表現する場合は、データは配列で持ちます。列方向に対してデータを並べる行列の表現方法を列優先の行列、行方向に対してデータを並べる行列の表現方法を行優先の行列といいます。
+  When you programmatically represent a matrix, you have the data as an array. The method of expressing a matrix that arranges data in the column direction is called a column-priority matrix, and the method of expressing a matrix that arranges data in the row direction is called a row-priority matrix.
 </p>
 <pre>
-# 列優先の行列表現
+#Column-first matrix representation
 my $mat_column_major = {
   rows_length =&gt; 3,
   columns_length =&gt; 2,
-  values =&gt; [1, 2, 3, 4, 5, 6],
-};
+  values ​​=&gt; [1, 2, 3, 4, 5, 6],
+};;
 
-# 行優先の行列表現
+# Row-first matrix representation
 my $mat_row_major = {
   rows_length =&gt; 3,
   columns_length =&gt; 2,
-  values =&gt; [1, 4, 2, 5, 3, 6],
-};
+  values ​​=&gt; [1, 4, 2, 5, 3, 6],
+};;
 </pre>
 <p>
-  ディープラーニング入門では、列優先の行列表現を使います。これは、後でC言語やcuda/GPUを使って行列計算を高速化する場合に、行列計算のBLASライブラリを呼び出しやすくするためです。
+  An introduction to deep learning uses column-first matrix representations. This is to make it easier to call the BLAS library for matrix calculations later when using C or cuda / GPU to speed up matrix calculations.
 </p>
 
   </div>
@@ -133,8 +130,7 @@ my $mat_row_major = {
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

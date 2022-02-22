@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>学習率とは - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ディープラーニングにおける学習率とは、重みとバイアスのパラメーター更新を行うために、傾きに対して、どの割合で増やすかを指定する値です。">
+<title> What is the learning rate?  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="The learning rate in deep learning is a value that specifies the percentage to increase with respect to the slope in order to update the weight and bias parameters.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200923123308.html">学習率とは</a></h2>
+    <h2><a href="/blog/20200923123308.html"> What is the learning rate? </a></H2>
 <p>
-  ディープラーニングにおける学習率とは、重みとバイアスのパラメーター更新を行うために、傾きに対して、どの割合で増やすかを指定する値です。
+  The learning rate in deep learning is a value that specifies the percentage to increase with respect to the slope in order to update the weight and bias parameters.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,38 +74,38 @@
 
 
 <p>
-  言葉で書いてもややこしいので、例を書きます。
+  It's complicated to write in words, so I'll write an example.
 </p>
-<h3>学習率がイメージできる例</h3>
+<h3> An example where you can imagine the learning rate </h3>
 <p>
-  重みw11を、0.001増やすと、損失関数(誤差の指標。0に近いほど良い)の値が、0.002減ることがわかりました。重みw11に対する損失関数の傾きは-20(-0.002/0.001)です。
-</p>
-<p>
-  重みw21を、0.001増やすと、損失関数(誤差の指標。0に近いほど良い)の値が、0.001増えることがわかりました。重みw21に対する損失関数の傾きは10(0.001/0.001)です。
+  It was found that increasing the weight w11 by 0.001 reduces the value of the loss function (an index of error, the closer it is to 0, the better) by 0.002. The slope of the loss function for the weight w11 is -20 (-0.002 / 0.001).
 </p>
 <p>
-  ディープラーニングの重みのパラメーターの更新は、求めた傾きの値をそのまま使うわけではありません。これをそのまま使ってしまうと、大きく飛び越え過ぎることになります。
+  It was found that increasing the weight w21 by 0.001 increases the value of the loss function (an index of error, the closer it is to 0, the better) by 0.001. The slope of the loss function for the weight w21 is 10 (0.001 / 0.001).
 </p>
 <p>
-  パラメータを増やしたり、減らしたりすると損失関数がどの程度増えたり、減ったりするかがわかったので、それを基準に、少しだけ動きましょう。この「少しだけ動く」ということを表現するのが学習率です。
+  Updating the deep learning weight parameter does not use the calculated slope value as is. If you use this as it is, you will jump over too much.
 </p>
 <p>
-  学習率を0.1に設定したとします
+  Now that we know how much the loss function increases or decreases as we increase or decrease the parameters, let's move a little based on that. The learning rate expresses this "moving a little".
 </p>
 <p>
-  重みw11の更新量は「-20 * 0.1 = -2」で、これを重みから引き算します「w11 = w11 - (-2)」。
+  Suppose you set the learning rate to 0.1
 </p>
 <p>
-  重みw11の更新量は「10 * 0.1 = 1」で、これを重みから引き算します「w11 = w11 - 1」。
+  The update amount of the weight w11 is "-20 * 0.1 = -2", and this is subtracted from the weight "w11 = w11-(-2)".
 </p>
 <p>
-  引き算をするのは、損失関数の値が減る方向に動かす必要があるからです。
+  The update amount of the weight w11 is "10 * 0.1 = 1", and this is subtracted from the weight "w11 = w11 --1".
 </p>
 <p>
-  バイアスのパラメーターの更新も、重みの更新とまったく同じです。
+  The reason for subtraction is that we need to move the value of the loss function in a decreasing direction.
 </p>
 <p>
-  重みとバイアスのパラメーターの損失関数に対する傾きは、逆誤伝播法というアルゴリズムを使うことで、すべての層において、一気に求まります。
+  Updating the bias parameters is exactly the same as updating the weights.
+</p>
+<p>
+  The slope of the weight and bias parameters with respect to the loss function can be obtained at once in all layers by using an algorithm called the inverse mispropagation method.
 </p>
 
   </div>
@@ -136,8 +133,7 @@
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>tanh関数の導関数 - 活性化関数の導関数 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="tanh関数の導関数をPerlで書いてみます。">
+<title> Derivative of tanh function --Derivative of activation function  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's write the  derivative of the  tanh function in Perl.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20201018123741.html">tanh関数の導関数 - 活性化関数の導関数</a></h2>
+    <h2><a href="/blog/20201018123741.html"> Derivative of tanh function --Derivative of activation function </a></h2>
 <p>
-  <a href="/blog/20200911102242.html">tanh関数</a>の<a href="/blog/20200919123308.html">導関数</a>をPerlで書いてみます。
+  Let's write the <a href="/blog/20200919123308.html"> derivative</a> of the <a href="/blog/20200911102242.html"> tanh function</a> in Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,23 +74,23 @@
 
 
 <p>
-  tanh関数の導関数は、逆誤伝播法に利用します。
+  The derivative of the tanh function is used for the inverse mispropagation method.
 </p>
 <pre>
 use strict;
 use warnings;
-use Math::Trig 'tanh';
+use Math::Trig'tanh';
 
 sub tanh_derivative {
-  my ($x) = @_;
+   my ($x) = @_;
   
-  my $tanh_derivative = 1 - tanh($x) ** 2;
+   my $tanh_derivative = 1 --tanh ($x) ** 2;
   
-  return $tanh_derivative;
+   return $tanh_derivative;
 }
 
 my $value1 = 0.5;
-my $tanh_derivative1 = tanh_derivative($value1);
+my $tanh_derivative1 = tanh_derivative ($value1);
 
 # 0.786447732965927
 print "$tanh_derivative1\n";
@@ -124,8 +121,7 @@ print "$tanh_derivative1\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

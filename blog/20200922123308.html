@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>逆誤伝播法 - 逆誤差伝播法 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="ディープラーニングで最も理解するのが難しいアルゴリズム、逆誤伝播法(逆誤差伝播法)について解説します。">
+<title> Reverse error propagation method-Reverse error propagation method  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="I will explain the algorithm that is the most difficult to understand in deep learning, the reverse mispropagation method (reverse error propagation method).">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200922123308.html">逆誤伝播法 - 逆誤差伝播法</a></h2>
+    <h2><a href="/blog/20200922123308.html"> Reverse error propagation method-Reverse error propagation method </a></h2>
 <p>
-  ディープラーニングで最も理解するのが難しいアルゴリズム、逆誤伝播法(逆誤差伝播法)について解説します。
+  I will explain the algorithm that is the most difficult to understand in deep learning, the reverse mispropagation method (reverse error propagation method).
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -76,146 +73,146 @@
 </div>
 
 
-<h3>逆誤伝播法とは何か</h3>
+<h3> What is the reverse mispropagation method? </H3>
 <p>
-  逆誤伝播法は、各層の重みとバイアスのパラメーターに対する損失関数の傾きを求めるアルゴリズムの一つです。
+  The reverse mispropagation method is one of the algorithms to find the slope of the loss function with respect to the weight and bias parameters of each layer.
 </p>
 <p>
-  各層の重みとバイアスのパラメーターに対する損失関数の傾きを求めるアルゴリズムには、逆誤伝播法よりも理解するのにより簡単な方法もあります。
+  There is also an easier-to-understand algorithm than the reverse mispropagation method for determining the slope of the loss function for each layer's weight and bias parameters.
 </p>
 <p>
-  ディープラーニングでは、パフォーマンスが重要なので、サンプルコードで最初から、逆誤伝播法が採用されていると考えてください。
+  In deep learning, performance is important, so think of the sample code as having the reverse mispropagation method from the beginning.
 </p>
 <p>
-  逆誤伝播法をいくつかの要素に分けて考えていきましょう。
+  Let's consider the reverse mispropagation method by dividing it into several elements.
 </p>
-<h3>最終層の個々の重みとバイアスのパラメーターに対する損失関数の傾きを求める</h3>
+<h3> Find the slope of the loss function for the individual weight and bias parameters of the final layer </h3>
 <p>
-  逆誤伝播法は、後ろから進んでいきます。最終出力は損失関数です。損失関数は、誤差の指標になります。
+  The reverse mispropagation method goes from behind. The final output is the loss function. The loss function is an indicator of error.
 </p>
 <p>
-  まず最初に、最後の層のバイアスパラメータと損失関数の関係を考えましょう。重みとバイアスは定義されていると考えてください。vec_addはベクトルの積、mat_mulは行列積、vec_subは、ベクトルの差を求める関数だと考えてください。
+  First, consider the relationship between the bias parameter of the last layer and the loss function. Think of weights and biases as being defined. Think of vec_add as the product of vectors, mat_mul as the matrix product, and vec_sub as the function to find the difference between the vectors.
 </p>
 <pre>
-# 重み
-my $weights = [..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ...,];
+# weight
+my $weights = [..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ...,. ..,];
 
-# バイアス
+#Bias
 my $biases = [..., ..., ...];
 
-# 期待される出力
+#Expected output
 my $desired_outputs = [1, 0, 0];
 
-# 入力
+# input
 my $inputs = [0.3, 0.2, 0, 0.5];
 
-# 出力
-my $outputs = vec_add(mat_mul($wieghts, $inputs), $biases);
+# output
+my $outputs = vec_add (mat_mul ($wieghts, $inputs), $biases);
 
-# 活性化された出力
-my $activate_outputs = activate($outputs);
+# Activated output
+my $activate_outputs = activate ($outputs);
 
-# 損失関数の結果(誤差の指標)
-my $cost = cost(vec_sub($desired_outputs, $activate_outputs);
+# Loss function result (error index)
+my $cost = cost (vec_sub ($desired_outputs, $activate_outputs);
 </pre>
 <p>
-  ここで、バイアスの一つの値を動かしたときに、損失関数がどう動くかを見たいと考えてください。たとえば、バイアス1を微小値0.001増加させたときに、損失関数が0.002減少したとします。
+  Now suppose you want to see how the loss function works when you move one value of the bias. For example, suppose that when you increase Bias 1 by a small value of 0.001, the loss function decreases by 0.002.
 </p>
 <p>
-  この時、バイアス1に対する損失関数の傾きは「-2 = -0.002/0.001」です。そして順番に、すべてのバイアスと、すべての重みについて、求めていきます。逆誤伝播法は、この値を速く求めるためのアルゴリズムです。
+  At this time, the slope of the loss function with respect to bias 1 is "-2 = -0.002 / 0.001". Then, in turn, find all the biases and all the weights. The reverse mispropagation method is an algorithm for finding this value quickly.
 </p>
 <p>
-  ここからは、難しいことはもう考えません。ソフトウェアエンジニアとしては、こうすれば、それが、求まるという考え方をしましょう。数学的知見のあるAIの研究者が導き出した方法を実装します。
+  From here on, I don't think about difficult things anymore. As a software engineer, let's think that this is what you want. We will implement the method derived by AI researchers with mathematical knowledge.
 </p>
-<h4>バイアスに対する損失関数の傾き</h4>
+<h4> Slope of loss function with respect to bias </h4>
 <p>
-  まず、最初に、最初のバイアスに対する損失関数の傾き求めます。
+  First, find the slope of the loss function with respect to the first bias.
 </p>
 <pre>
-# ひとつのバイアスの損失関数に関する傾き
-#   = 活性化関数の導関数(ひとつの出力) * 損失関数の導関数(ひとつの期待される出力, ひとつの活性化された出力);
-my $biase_grads0 = activate_derivative($outputs-&gt;[0]) * cost_derivative($desired_outputs-&gt;[0], $activate_outputs-&gt;[0]);
+# Slope with respect to the loss function of one bias
+# = Derivative of activation function (1 output) * Derivative of loss function (1 expected output, 1 activated output);
+my $bias_grads0 = activate_derivative ($outputs-&gt;[0]) * cost_derivative ($desired_outputs-&gt;[0], $activate_outputs-&gt;[0]);
 </pre>
 <p>
-  すべてのバイアスに対する損失関数の傾きを求めるので、forループします。
+  Since we want to find the slope of the loss function for all biases, we loop for.
 </p>
 <pre>
 my $biase_grads = [];
-for (my $i = 0; $i &lt; @$biases; $i++) {
-  $biase_grads-&gt;[$i] = activate_derivative($outputs-&gt;[0]) * cost_derivative($desired_outputs-&gt;[0], $activate_outputs-&gt;[0]);
+for (my $i = 0; $i &lt;@$biases; $i ++) {
+  $bias_grads-&gt;[$i] = activate_derivative ($outputs-&gt;[0]) * cost_derivative ($desired_outputs-&gt;[0], $activate_outputs-&gt;[0]);
 }
 </pre>
-<h4>重みに対する損失関数の傾き</h4>
+<h4> Slope of loss function with respect to weight </h4>
 <p>
-  重みに対する損失関数の傾きを求めます。
+  Find the slope of the loss function with respect to the weight.
 </p>
 <pre>
-# ひとつの重みに対する損失関数の傾き0行0列 = 上記で求めたひとつのバイアスの傾き0 * ひとつの入力0
-my $weight_grads0 = $biase_grads-&gt;[0] * $inputs-&gt;[0];
+# Loss function slope for one weight 0 rows 0 columns = one bias slope found above 0 * one input 0
+my $weight_grads0 = $bias_grads-&gt;[0] * $inputs-&gt;[0];
 </pre>
 <p>
-  重みは、列優先の行列として表現されているので、forループは以下のようになります。
+  The weights are represented as a column-major matrix, so the for loop looks like this:
 </p>
 <pre>
 my $weights_grads = [];
-for (my $input_index = 0; $input_index &lt; $inputs_length; $input_index++) {
-  for (my $biase_index = 0; $biase_index &lt; $biases_length; $biase_index++) {
-    my $weight_grad_index = $biase_index + ($input_index * $biases_length);
+for (my $input_index = 0; $input_index &lt;$inputs_length; $input_index ++) {
+  for (my $bias_index = 0; $bias_index &lt;$bias_length; $bias_index ++) {
+    my $weight_grad_index = $bias_index + ($input_index * $biases_length);
     $weight_grads-&gt;[$weight_grad_index] = $biase_grads-&gt;[$biase_index] * $inputs-&gt;[$input_index];
   }
 }
 </pre>
 <p>
-  これは、バイアスを縦ベクトルとみて、入力を横ベクトルとみた行列の掛け算としても表現できます。
+  This can also be expressed as a matrix multiplication of the bias as a vertical vector and the input as a horizontal vector.
 </p>
 <pre>
-# バイアスの傾き
+#Bias slope
 1
 2
 3
 
-# 入力
+# input
 4 5 6 7
 
-# 重みに対する損失関数の傾き
-4  5  6  7
-8  10 12 14
+#Slope of loss function with respect to weight
+4 5 6 7
+8 10 12 14
 12 15 18 21
 </pre>
 <p>
-  このページの計算内容を現在試行錯誤中です。
+  The calculation content on this page is currently undergoing trial and error.
 </p>
-<h3>中間層の個々の重みとバイアスのパラメーターに対する損失関数の傾きを求める</h3>
+<h3> Find the slope of the loss function for the individual weight and bias parameters of the middle layer </h3>
 <p>
-  逆誤伝播法では、重みとバイアスの傾きを求めるために層を後ろ向きにたどっていきますが、上記で求めた、バイアスの傾きが利用されます。
+  In the reverse mispropagation method, the layer is traced backwards to find the slope of the weight and bias, but the slope of the bias found above is used.
 </p>
 <pre>
-# 重み
-my $weights = [..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ...,];
+# weight
+my $weights = [..., ..., ..., ..., ..., ..., ..., ..., ..., ..., ...,. ..,];
 
-# バイアス
+#Bias
 my $biases = [..., ..., ...];
 
-# 入力
+# input
 my $inputs = [0.3, 0.2, 0, 0.5];
 
-# 出力
-my $outputs = vec_add(mat_mul($wieghts, $inputs), $biases);
+# output
+my $outputs = vec_add (mat_mul ($wieghts, $inputs), $biases);
 
-# 活性化された出力
-my $activate_outputs = activate($outputs);
+# Activated output
+my $activate_outputs = activate ($outputs);
 </pre>
-<h4>バイアスに対する損失関数の傾き</h4>
+<h4> Slope of loss function with respect to bias </h4>
 <pre>
-バイアスに関する損失関数の傾き0 =「次の層のバイアスの傾き0～n」と「次の層の重み0列0～n行」の内積
-バイアスに関する損失関数の傾き1 =「次の層のバイアスの傾き0～n」と「次の層の重み1列0～n行」の内積
+Loss function slope with respect to bias 0 = Inner product of "slope of next layer bias 0-n" and "weight of next layer 0 columns 0-n rows"
+Slope of loss function with respect to bias 1 = Dot product of "slope of bias of next layer 0 to n" and "weight of next layer 1 column 0 to n rows"
 </pre>
-<h4>重みに対する損失関数の傾き</h4>
+<h4> Slope of loss function with respect to weight </h4>
 <p>
-  重みに対する損失関数の傾きの計算は、最後の層で求めた方法と同じです。
+  Calculating the slope of the loss function for weights is the same as the method found in the last layer.
 </p>
 <p>
-  (この記事の計算やコードは、試行錯誤中のものです。)
+  (The calculations and code in this article are trial and error.)
 </p>
 
   </div>
@@ -243,8 +240,7 @@ my $activate_outputs = activate($outputs);
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

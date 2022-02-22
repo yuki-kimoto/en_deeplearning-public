@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>MNISTラベル情報を読み込む - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="MNISTラベル情報をPerlで読み込むサンプルプログラムです。MNISTは、ディープラーニングで利用できる画像のサンプルです。">
+<title> Read MNIST label information  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="This is a sample program that reads MNIST label information in Perl. MNIST is a sample image that can be used in deep learning.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200909120907.html">MNISTラベル情報を読み込む</a></h2>
+    <h2><a href="/blog/20200909120907.html"> Read MNIST label information </a></h2>
 <p>
-  MNISTラベル情報をPerlで読み込むサンプルプログラムです。MNISTは、ディープラーニングで利用できる画像のサンプルです。
+  This is a sample program that reads MNIST label information in Perl. MNIST is a sample image that can be used in deep learning.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,62 +74,62 @@
 
 
 <p>
-  <a href="http://yann.lecun.com/exdb/mnist/">THE MNIST DATABASE of handwritten digits</a>を読み込むサンプルです。
+  This is a sample to read <a href="http://yann.lecun.com/exdb/mnist/"> THE MNIST DATABASE of handwritten digits</a>.
 </p>
 <pre>
 use strict;
 use warnings;
 use FindBin;
 
-# MNISTラベル情報を読み込む
-my $mnist_label_file = "$FindBin::Bin/data/train-labels-idx1-ubyte";
+# MNIST Read label information
+my $mnist_label_file = "$FindBin::Bin / data / train-labels-idx1-ubyte";
 
-open my $mnist_label_fh, '&lt;', $mnist_label_file
+open my $mnist_label_fh,'&lt;', $mnist_label_file
   or die "Can't open file $mnist_label_file: $!";
 
-# マジックナンバー
+#Magic number
 my $label_buffer;
 read($mnist_label_fh, $label_buffer, 4);
 my $magic_number = unpack('N1', $label_buffer);
-if ($magic_number != 0x00000801) {
-  die "Invalid magic number expected " . 0x00000801 . "actual $magic_number";
+if ($magic_number! = 0x00000801) {
+  die "Invalid magic number expected". 0x00000801. "actual $magic_number";
 }
 
-# ラベル数
+# Number of labels
 read($mnist_label_fh, $label_buffer, 4);
 my $items_count = unpack('N1', $label_buffer);
 
-# ラベルの読み込み
+#Read label
 my $label_numbers = [];
-for (my $i = 0; $i &lt; $items_count; $i++) {
+for (my $i = 0; $i &lt;$items_count; $i ++) {
   read $mnist_label_fh, $label_buffer, 1;
   my $label_number = unpack('C1', $label_buffer);
   push @$label_numbers, $label_number;
 }
 
-# ラベル情報
+# Label information
 my $label_info = {};
 $label_info-&gt;{items_count} = $items_count;
 $label_info-&gt;{label_numbers} = $label_numbers;
 </pre>
-<h3>MNISTラベル情報を読み込むプログラムの簡易解説</h3>
+<h3> A brief explanation of the program that reads MNIST label information </h3>
 <p>
-  「data」以下に「train-labels-idx1-ubyte」を配置します。
+  Place "train-labels-idx1-ubyte" under "data".
 </p>
 <p>
-  ファイルをオープンしてread関数で読み込んでいきます。
+  Open the file and read it with the read function.
 </p>
 <p>
-  マジックナンバーのチェックを行います。ビッグエンディアンの32bit整数なので、unpackに「N1」を指定します。
+  Check the magic number. Since it is a big endian 32-bit integer, specify "N1" for unpack.
 </p>
 <p>
-  ラベル数を取得します。ビッグエンディアンの32bit整数なので、unpackに「N1」を指定します。
+  Get the number of labels. Since it is a big endian 32-bit integer, specify "N1" for unpack.
 </p>
 <p>
-  ラベルを読み込んでいきます。ラベルの一つの情報は符号なし8bit整数なので「C1」を指定します。
+  I will read the label. Since one piece of information on the label is an unsigned 8-bit integer, specify "C1".
 </p>
 <p>
-  訓練用のラベル情報である「train-labels-idx1-ubyte」を読み込んでいますが、検証用のラベル情報「t10k-labels-idx1-ubyte」も同様の方法で読み込めます。
+  The label information for training "train-labels-idx1-ubyte" is read, but the label information for verification "t10k-labels-idx1-ubyte" can also be read in the same way.
 </p>
 
   </div>
@@ -160,8 +157,7 @@ $label_info-&gt;{label_numbers} = $label_numbers;
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>訓練データをランダムにシャッフルする - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="訓練データをランダムにシャッフルする方法を解説します。">
+<title> Randomly shuffle training data  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="I will explain how to shuffle the training data randomly.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200906120907.html">訓練データをランダムにシャッフルする</a></h2>
+    <h2><a href="/blog/20200906120907.html"> Randomly shuffle training data </a></​​h2>
 <p>
-  訓練データをランダムにシャッフルする方法を解説します。
+  I will explain how to shuffle the training data randomly.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,36 +74,36 @@
 
 
 <p>
-  以下は訓練データをランダムにシャッフルして取得するPerlプログラムです。
+  Below is a Perl program that randomly shuffles and retrieves training data.
 </p>
 <pre>
 use strict;
 use warnings;
-use List::Util 'shuffle';
+use List::Util'shuffle';
 
-# インデックスのシャッフル
+#Index shuffle
 my @indexes = (0 .. 9);
 my @shuffled_indexes = shuffle @indexes;
 
-# 画像情報を想定したデータをランダムな順で取得
-my @training_datas = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k');
-for my $index (@shuffled_indexes) {
-  my $training_data = $training_datas[$index];
+#Get data assuming image information in random order
+my @training_datas = ('a','b','c','d','e','f','g','h','j','k');
+for my $index(@shuffled_indexes) {
+  my $training_data = $training_datas [$index];
   print "$training_data\n";
 }
 </pre>
-<h3>訓練データをランダムにシャッフルして取得するPerlプログラムの簡易解説</h3>
+<h3> A brief explanation of the Perl program that randomly shuffles and acquires training data </​​h3>
 <p>
-  配列をランダムにシャッフルするにはList::Utilのshuffle関数を使います。
+  To shuffle the array randomly, use the Shuffle function of List::Util.
 </p>
 <p>
-  まずインデックスを作成して、これをランダムにシャッフルします。
+  First create an index and shuffle it randomly.
 </p>
 <p>
-  そして、ランダムに並んだインデックスを使って、訓練データを取り出します。
+  Then, the training data is fetched using the randomly arranged indexes.
 </p>
 <p>
-  訓練データそのものをシャッフルしてもよいのですが、バイナリで複数の連続した画像情報を扱っている場合にも対応できるように、インデックスのシャッフルの例にしました。
+  The training data itself may be shuffled, but I used an example of index shuffling so that it can handle multiple consecutive image information in binary.
 </p>
 
   </div>
@@ -134,8 +131,7 @@ for my $index (@shuffled_indexes) {
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>softmax関数 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="softmax関数は、出力を合計が100%の確率分布に変換してくれる関数です。">
+<title> softmax function  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="The softmax function is a function that transforms the output into a probability distribution with a total of 100%.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20201002161518.html">softmax関数</a></h2>
+    <h2><a href="/blog/20201002161518.html"> softmax function </a></h2>
 <p>
-  softmax関数は、出力を合計が100%の確率分布に変換してくれる関数です。
+  The softmax function is a function that transforms the output into a probability distribution with a total of 100%.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -80,17 +77,17 @@
 use strict;
 use warnings;
 
-# softmax関数
+#softmax function
 sub softmax {
   my ($nums) = @_;
   
   my $exp_total = 0;
-  for (my $i = 0; $i &lt; @$nums; $i++) {
-    $exp_total += exp($nums-&gt;[$i]);
+  for (my $i = 0; $i &lt;@$nums; $i ++) {
+    $exp_total + = exp($nums-&gt;[$i]);
   }
   
   my $nums_out = [];
-  for (my $i = 0; $i &lt; @$nums; $i++) {
+  for (my $i = 0; $i &lt;@$nums; $i ++) {
     $nums_out-&gt;[$i] = exp($nums-&gt;[$i]) / $exp_total;
   }
   
@@ -99,34 +96,34 @@ sub softmax {
 
 my $outputs = [0.07, 0.14, 0.24];
 
-my $softmax_outputs = softmax($outputs);
+my $softmax_outputs = softmax ($outputs);
 
 # 0.306954386271124 0.329211090547647 0.363834523181229
 print "@$softmax_outputs\n";
 </pre>
 <p>
-  もし出力に0が含まれていた場合でも、softmax関数の出力は、計算可能です。
+  The output of the softmax function is computable even if the output contains 0s.
 </p>
 <pre>
 my $outputs = [0, 0.14, 0.24];
 
-my $softmax_outputs = softmax($outputs);
+my $softmax_outputs = softmax ($outputs);
 
 # 0.292267512114761 0.336187661442797 0.371544826442441
 print "@$softmax_outputs\n";
 </pre>
 <p>
-  <a href="/blog/20200901120907.html">損失関数</a>である<a href="/blog/20200831120907.html">クロスエントロピー誤差</a>は、引数の値に0を含んでいる場合に、log(0)となるので、計算不能になりますが、softmax関数を出力層の活性化関数として使うと回避できます。
+  <a href="/blog/20200901120907.html"> loss function</a> <a href="/blog/20200831120907.html"> cross entropy error</a> contains 0 in the argument value If it is, it will be log(0), so it will be impossible to calculate, but it can be avoided by using the softmax function as the activation function of the output layer.
 </p>
-<h3>softmax関数の導関数</h3>
+<h3> Derivative of softmax function </h3>
 <p>
-  softmax関数の導関数は表現が難しいです。
+  The derivative of the softmax function is difficult to express.
 </p>
 <p>
-  ただし、softmax関数とクロスエントロピー誤差の合成関数の導関数は表現が簡単なので、逆誤伝播法に使えます。
+  However, the derivative of the softmax function and the composite function of the cross entropy error is easy to express, so it can be used for the inverse mispropagation method.
 </p>
 <ul>
-  <li><a href="/blog/20200927161518.html">softmax関数とクロスエントロピー誤差の合成関数の導関数</a></li>
+  <li> <a href="/blog/20200927161518.html"> Derivatives of the softmax function and the composite function of the cross entropy error</a> </li>
 </ul>
 
   </div>
@@ -154,8 +151,7 @@ print "@$softmax_outputs\n";
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

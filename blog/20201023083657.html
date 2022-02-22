@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>パラメーター更新最適化アルゴリズムとは - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="パラメーター更新最適化アルゴリズムとは、重みとバイアスのパラメーターを更新する場合に、高い正答率に速く到達し、また最終的な正答率が高くなるように考えられたアルゴリズムのことです。">
+<title> What is the parameter update optimization algorithm?  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="The parameter update optimization algorithm updates the parameters of  weight and  bias. In some cases, it is an algorithm designed to reach a high percentage of correct answers quickly and also to have a high final percentage of correct answers.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20201023083657.html">パラメーター更新最適化アルゴリズムとは</a></h2>
+    <h2><a href="/blog/20201023083657.html"> What is the parameter update optimization algorithm? </a></H2>
 <p>
-  パラメーター更新最適化アルゴリズムとは、<a href="/blog/20201015143424.html">重み</a>と<a href="/blog/20201016143424.html">バイアス</a>のパラメーターを更新する場合に、高い正答率に速く到達し、また最終的な正答率が高くなるように考えられたアルゴリズムのことです。
+  The parameter update optimization algorithm updates the parameters of <a href="/blog/20201015143424.html"> weight</a> and <a href="/blog/20201016143424.html"> bias</a>. In some cases, it is an algorithm designed to reach a high percentage of correct answers quickly and also to have a high final percentage of correct answers.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,52 +74,52 @@
 
 
 <ul>
-  <li><a href="/blog/20201017123741.html">確率的勾配降下法 - SGD</a></li>
-  <li><a href="/blog/20201022083657.html">Adam - SGDの改善</a></li>
+  <li> <a href="/blog/20201017123741.html"> Stochastic Gradient Descent Method --SGD</a> </li>
+  <li> <a href="/blog/20201022083657.html"> Adam --Improved SGD</a> </li>
 </ul>
-<h3>ミニバッチSGDとは何ですか?</h3>
+<h3> What is Mini Batch SGD? </H3>
 <p>
-  このサイトの解説では、確率的勾配降下法に、ミニバッチSGDを含んでいますが、本来的な意味は、バッチサイズが1のものをSGDとよび、バッチサイズが複数のものを、ミニバッチSGDと呼びます。
+  In the explanation of this site, the stochastic gradient descent method includes mini-batch SGD, but the original meaning is that one with a batch size of 1 is called SGD, and one with multiple batch sizes is called mini-batch SGD. I call.
 </p>
-<h3>勾配降下法とは何ですか?</h3>
+<h3> What is the gradient descent method? </H3>
 <p>
-  勾配降下法とは、確率的勾配降下法において、訓練データをランダムに並べ替えることを行わない方法です。
-</p>
-<p>
-  確率的の意味は、訓練データをランダムに並べかえるという意味です。
-</p>
-<h3>最急降下法とは何ですか?</h3>
-<p>
-  最急降下法とは、勾配降下法において、バッチサイズを、訓練数と同じにしたものです。
+  Gradient descent is a stochastic gradient descent that does not randomly sort the training data.
 </p>
 <p>
-  「最急降下」の意味は、誤差の指標である損失関数に対して大きな変化をもたらす(傾きが大きい)パラメーターは、その大きさに学習率を考慮した値を減算して更新するという意味です。
+  Probabilistic means that the training data is randomly rearranged.
 </p>
-<h3>理解の仕方</h3>
+<h3> What is the steepest descent method? </H3>
 <p>
-  パラメーター更新最適化アルゴリズムの理解の仕方。
-</p>
-<h4>訓練データをランダムに並べ替えるか</h4>
-<p>
-  「確率的」という言葉で表現されます。
-</p>
-<h4>バッチサイズはいくつか</h4>
-<p>
-  バッチサイズが訓練数と同じであれば、最急降下法、バッチサイズが一つであれば、勾配降下法(SDG)、バッチサイズが複数であれば、ミニバッチSGDです。
-</p>
-<h3>バッチサイズと並列化</h3>
-<p>
-  ミニバッチSDGが優れているのは、スレッドなどを使って並列化を行うことができることです。これによって、パフォーマンスを向上させることができます。
+  The steepest descent method is a gradient descent method in which the batch size is the same as the number of trainings.
 </p>
 <p>
-  1回の学習は、それぞれ独立しているので、傾き(勾配)の計算も独立して行うことができます。
+  "Sudden descent" means that a parameter that causes a large change (large slope) to the loss function, which is an index of error, is updated by subtracting the value considering the learning rate from its magnitude.
 </p>
-<h3>ミニバッチSDGをさらに改善したパラメーター更新最適化アルゴリズム</h3>
+<h3> How to understand </h3>
 <p>
-  ミニバッチSDGをさらに改善したパラメータ最適化アルゴリズムがあります。
+  How to understand the parameter update optimization algorithm.
+</p>
+<h4> Randomly sort the training data </​​h4>
+<p>
+  It is expressed by the word "stochastic".
+</p>
+<h4> Several batch sizes </h4>
+<p>
+  If the batch size is the same as the number of trainings, it is the steepest descent method, if there is one batch size, it is the gradient descent method (SDG), and if there are multiple batch sizes, it is the mini-batch SGD.
+</p>
+<h3> Batch size and parallelization </h3>
+<p>
+  The great thing about the mini-batch SDG is that it can be parallelized using threads and so on. This can improve performance.
+</p>
+<p>
+  Since each learning is independent, the slope can be calculated independently.
+</p>
+<h3> Parameter update optimization algorithm that further improves the mini-batch SDG </h3>
+<p>
+  There is a parameter optimization algorithm that is an improvement over the mini-batch SDG.
 </p>
 <ul>
-  <li><a href="/blog/20201022083657.html">Adam - SGDの改善</a></li>
+  <li> <a href="/blog/20201022083657.html"> Adam --Improved SGD</a> </li>
 </ul>
 
   </div>
@@ -150,8 +147,7 @@
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

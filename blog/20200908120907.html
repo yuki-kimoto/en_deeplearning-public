@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>Perl+ディープラーニングで手書き文字認識 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="Perl+ディープラーニングで手書き文字認識を行います。">
+<title> Handwriting recognition with Perl + deep learning  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Performs handwriting recognition with Perl + deep learning.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200908120907.html">Perl+ディープラーニングで手書き文字認識</a></h2>
+    <h2><a href="/blog/20200908120907.html"> Handwriting recognition with Perl + deep learning </a></h2>
 <p>
-  Perl+ディープラーニングで手書き文字認識を行います。
+  Performs handwriting recognition with Perl + deep learning.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,25 +74,25 @@
 
 
 <p>
-  この記事のひとつの目的は、SPVMの機能の試験を行うことです。
+  One purpose of this article is to test the functionality of SPVM.
 </p>
 <p>
-  Perlでディープラーニング処理を記述し、それを<a href="https://metacpan.org/pod/SPVM/">SPVM</a>に書き直し、C言語にトランスパイルし、最後にcudaとcuBLASを使ったGUP演算に差し替えることが目標です。
+  Write a deep learning process in Perl, rewrite it to <a href="https://metacpan.org/pod/SPVM/"> SPVM</a>, transpile it to C, and finally cuda and cuBLAS The goal is to replace it with a GUP operation using.
 </p>
 <p>
-  参考にするサイトは以下です。
+  The sites to refer to are as follows.
 </p>
 <p>
-  <a href="https://nnadl-ja.github.io/nnadl_site_ja/index.html">ニューラルネットワークと深層学習</a>
+  <a href="https://nnadl-ja.github.io/nnadl_site_ja/index.html"> Neural networks and deep learning</a>
 </p>
 <p>
-  このサイトに書かれている内容をPerlで実装し、手書き文字認識の精度をこのサイトで記述されているレベルまで、上昇させます。
+  It implements what is written on this site in Perl and raises the accuracy of handwriting recognition to the level described on this site.
 </p>
 <p>
-  ディープラーニングによる、静的なパターン認識のアルゴリズムは、汎用的なものなので、このページをコピペすれば、他の分類問題でも、静的なパターン認識ができるように構成したいと思います。
+  The algorithm for static pattern recognition by deep learning is general purpose, so if you copy and paste this page, I would like to configure it so that static pattern recognition can be performed even for other classification problems.
 </p>
 <p>
-  できる限り難しい数学的概念を使わずに、ソウトウェアエンジニアの知識で理解できる実用的なサンプルにする予定です。
+  We plan to make it a practical sample that can be understood by the knowledge of software engineers, without using difficult mathematical concepts as much as possible.
 </p>
 
   </div>
@@ -123,8 +120,7 @@
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"

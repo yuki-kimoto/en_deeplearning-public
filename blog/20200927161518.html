@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- meta -->
-<meta charset="UTF-8">
+    <!-- meta --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
 <link rel="stylesheet" type="text/css" href="/css/common.css">
@@ -25,8 +24,7 @@
   });
 </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-5YWD0EFVYR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -35,8 +33,8 @@
   gtag('config', 'G-5YWD0EFVYR');
 </script>
 
-<title>softmax関数とクスエントロピー誤差の合成関数の導関数 - Perl AI Deep Learning Tutorial</title>
-<meta name="description" content="softmax関数とクロスエントロピー関数の合成関数の導関数をPerlで記述してみます。">
+<title> Derivative of the softmax function and the composite function of the cross entropy error  - Perl AI Deep Learning Tutorial</title>
+<meta name="description" content="Let's write the derivative of the composition function of the softmax function and the cross entropy function in Perl.">
   </head>
   <body>
     <div class="container">
@@ -53,12 +51,11 @@
           <div class="entry">
   <div class="top">
     <!-- top -->
-
   </div>
   <div class="middle">
-    <h2><a href="/blog/20200927161518.html">softmax関数とクスエントロピー誤差の合成関数の導関数</a></h2>
+    <h2><a href="/blog/20200927161518.html"> Derivative of the softmax function and the composite function of the cross entropy error </a></h2>
 <p>
-  softmax関数とクロスエントロピー関数の合成関数の導関数をPerlで記述してみます。
+  Let's write the derivative of the composition function of the softmax function and the cross entropy function in Perl.
 </p>
 <div style="width:calc(100% - 30px);margin:10px auto;">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
@@ -77,27 +74,27 @@
 
 
 <p>
-  実は、<a href="/blog/20201002161518.html">softmax関数</a>の<a href="/blog/20200919123308.html">導関数</a>は、そう簡単ではありません。
+  In fact, the <a href="/blog/20200919123308.html"> derivative</a> of the <a href="/blog/20201002161518.html"> softmax function</a> is not so easy.
 </p>
 <p>
-  ですが、softmax関数とクロスエントロピー関数の合成関数の導関数は簡単な表現になります。
+  However, the derivative of the composite function of the softmax function and the cross entropy function is a simple expression.
 </p>
 <p>
-  このため、softmax関数とクスエントロピー誤差の合成関数の導関数を、逆誤伝播法に利用します。
+  Therefore, the derivative of the softmax function and the composite function of the cross entropy error is used for the inverse mispropagation method.
 </p>
 <pre>
 use strict;
 use warnings;
 
-# softmaxクロスエントロピー誤差の導関数
+#softmax Derivative of cross entropy error
 sub softmax_cross_entropy_cost_derivative {
   my ($softmax_outputs, $desired_outputs) = @_;
   
   my $length = @$softmax_outputs;
   
   my $softmax_cross_entropy_cost_derivative = [];
-  for (my $i = 0; $i &lt; @$softmax_outputs; $i++) {
-    $softmax_cross_entropy_cost_derivative-&gt;[$i] = ($softmax_outputs-&gt;[$i] - $desired_outputs-&gt;[$i]) / $length;
+  for (my $i = 0; $i &lt;@$softmax_outputs; $i ++) {
+    $softmax_cross_entropy_cost_derivative-&gt;[$i] = ($softmax_outputs-&gt;[$i]-$desired_outputs-&gt;[$i]) / $length;
   }
   
   return $softmax_cross_entropy_cost_derivative;
@@ -129,8 +126,7 @@ sub softmax_cross_entropy_cost_derivative {
           <div style="margin-bottom:30px">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525414114581084"
      crossorigin="anonymous"></script>
-<!-- ディスプレイ縦長 -->
-<ins class="adsbygoogle"
+<!-- ディスプレイ縦長 --><ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-4525414114581084"
      data-ad-slot="4544919209"
